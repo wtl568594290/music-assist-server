@@ -1,0 +1,23 @@
+name = "music-assist-server"
+main = "src/index.ts"
+compatibility_date = "2026-11-13"
+
+# 静态资源：public/index.html 由 assets 直接返回，其余路径交给 Worker
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# 图片对象存储
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "music-assist-data"
+
+# 元数据（文档列表 + 图片映射）
+# 先执行 npx wrangler d1 create render-test-db，再把返回的 database_id 替换到下面
+[[d1_databases]]
+binding = "DB"
+database_name = "music_assist_db"
+database_id = "581f5052-fe4d-4017-92a2-9f82dba3c5f9"
+
+[observability]
+enabled = true

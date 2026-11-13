@@ -1,0 +1,16 @@
+{
+  "name": "music-assist-server",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:init:local": "wrangler d1 execute render-test-db --local --file=./schema.sql",
+    "db:init:remote": "wrangler d1 execute render-test-db --remote --file=./schema.sql"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261113.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.161.0"
+  }
+}
