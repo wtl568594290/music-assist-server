@@ -227,9 +227,6 @@ export default {
     if (pathname === '/ping' && method === 'GET') {
       return json({ message: 'pong' });
     }
-    if (pathname === '/health' && method === 'GET') {
-      return json({ message: 'ok' });
-    }
     if (pathname === '/doc') {
       if (method === 'POST') return setDocs(request, env);
       if (method === 'GET') return getDocs(env);

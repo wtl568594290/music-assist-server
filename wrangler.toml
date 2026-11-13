@@ -13,7 +13,7 @@ binding = "IMAGES"
 bucket_name = "music-assist-data"
 
 # 元数据（文档列表 + 图片映射）
-# 先执行 npx wrangler d1 create render-test-db，再把返回的 database_id 替换到下面
+# 先执行 npx wrangler d1 create music_assist_db，再把返回的 database_id 替换到下面
 [[d1_databases]]
 binding = "DB"
 database_name = "music_assist_db"
